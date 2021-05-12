@@ -1,0 +1,13 @@
+﻿@model Usuario
+
+<h1>Editar usuario</h1>
+
+<form method="post">
+    <label>Id Usuario</label>
+    <input type="text" name="idusuario" value="@Model.IdUsuario" class="form-control" readonly /><br />
+    <label>Nombre</label>
+    <input type="text" name="nombre" value="@Model.Nombre" class="form-control" /><br />
+    <label>Descripción</label>
+    <input type="text" name="descripcion" value="@Model.Descripcion" class="form-control" /><br />
+    <button type="submit" class="btn btn-success">Editar</button>
+</form>

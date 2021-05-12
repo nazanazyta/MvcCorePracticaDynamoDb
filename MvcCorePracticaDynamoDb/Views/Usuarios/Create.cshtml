@@ -1,0 +1,16 @@
+﻿@model Usuario
+
+<h1>Crear usuario nuevo</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <label>Id Usuario</label>
+    <input type="text" name="idusuario" class="form-control" /><br />
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control" /><br />
+    <label>Descripción</label>
+    <input type="text" name="descripcion" class="form-control" /><br />
+    <label>Incluir imágenes</label>
+    <input type="checkbox" name="incluirimagenes" value="true" /><br />
+    <input type="file" name="imagenes" multiple class="form-control" /><br />
+    <button type="submit" class="btn btn-success">Crear</button>
+</form>

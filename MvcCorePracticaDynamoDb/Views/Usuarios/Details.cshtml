@@ -1,0 +1,50 @@
+﻿@model Usuario
+
+<h1>Detalles</h1> 
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">
+            Id Usuario
+        </dt>
+        <dd class="col-sm-9">
+            @Model.IdUsuario
+        </dd>
+        <dt class="col-sm-3">
+            Nombre
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Nombre
+        </dd>
+        <dt class="col-sm-3">
+            Descripción
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Descripcion
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de alta
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaAlta
+        </dd>
+    </dl>
+</div>
+<div>
+    <h2>Imágenes</h2>
+    <ul>
+        @if (Model.Fotos != null)
+        {
+            @foreach (var item in Model.Fotos)
+            {
+                <li class="list-group-item">
+                    <img src="@item.Imagen" style="width: 150px; height: 150px" />
+                    <a asp-action="DeleteImage" asp-route-idusu="@Model.IdUsuario" asp-route-filename="@item.Imagen">Delete</a>
+                </li>
+            }
+        }
+    </ul>
+</div>
+<div>
+    <a asp-action="Index">Back to list</a>
+</div>

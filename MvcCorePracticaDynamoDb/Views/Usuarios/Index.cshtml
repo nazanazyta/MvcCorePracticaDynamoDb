@@ -1,0 +1,31 @@
+﻿@model List<Usuario>
+
+<h1>Usuarios</h1>
+
+<p>
+    <a asp-action="Create">Crear usuario nuevo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Usuario usu in Model)
+        {
+            <tr>
+                <td>@usu.Nombre</td>
+                <td>@usu.Descripcion</td>
+                <td>
+                    <a asp-action="Details" asp-route-idusu="@usu.IdUsuario">Details</a>
+                    <a asp-action="Edit" asp-route-idusu="@usu.IdUsuario">Edit</a>
+                    <a asp-action="Delete" asp-route-idusu="@usu.IdUsuario">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
